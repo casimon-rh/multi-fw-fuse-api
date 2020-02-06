@@ -1,6 +1,10 @@
-# Multi Framework Fuse Apis
+# Multi Framework Fuse Apis ↡
 
-## Implemented
+## Intro
 
-* [Spring](./spring/readme.md)
-* [Karaf](./karaf/readme.md)
+Red Hat Fuse & Apache Camel, rest api tests 🐪🧩
+
+## Implemented ✅
+
+* [Spring 🍃](./spring)
+* [Karaf ⚗️](./karaf)

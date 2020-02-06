@@ -1,6 +1,6 @@
-# Api Karaf
+# Api Karaf ⚗️
 
-## Dependencies:
+## Dependencies: 📦
 
 ```bash
 karaf@root()> feature:install aries-blueprint
@@ -9,7 +9,7 @@ karaf@root()> feature:install camel-netty-http
 karaf@root()> feature:install camel-swagger-java
 ```
 
-## Run:
+## Run: 🏃‍♂️
 
 ```bash
 karaf@root()> bundle:install mvn:com.redhat/api-karaf
@@ -17,7 +17,7 @@ karaf@root()> bundle:install mvn:com.redhat/api-karaf
 karaf@root()> bundle:start ${ID}
 ```
 
-## Test:
+## Test: 🧪
 
 ```bash
 $ curl -X POST -H "Content-Type:application/json" -H "Accept:application/json" -d '{ "a":"a" }' http://localhost:8008/rest/users/new
