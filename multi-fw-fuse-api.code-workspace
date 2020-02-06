@@ -1,7 +1,8 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": ".",
+			"name": "main"
 		}
 	],
 	"settings": {
@@ -12,7 +13,15 @@
 			"**/.hg": true,
 			"**/CVS": true,
 			"**/.DS_Store": true,
-			"**/target": true
+			"**/target": true,
+			"**/*.swap": true
 		}
 	},
+	"extensions": {
+		"recommendations": [
+			"redhat.apache-camel-extension-pack",
+			"oderwat.indent-rainbow",
+			"CoenraadS.bracket-pair-colorizer-2"
+		]
+	}
 }
