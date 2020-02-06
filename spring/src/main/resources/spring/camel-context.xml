@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:camel="http://camel.apache.org/schema/spring" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+  <!-- Define a traditional camel context here -->
+  <camelContext id="camelContext" xmlns="http://camel.apache.org/schema/spring">
+    <restConfiguration component="netty-http" bindingMode="off" contextPath="/rest" apiContextPath="/api-doc" port="8080" >
+      <apiProperty key="api.title" value="Api-Spring"/>
+      <apiProperty key="api.version" value="0.0.1"/>
+    </restConfiguration>
+
+    <rest path="/users" consumes="application/json" produces="application/json" >
+      <post uri="/new">
+        <to uri="direct:prueba" />
+      </post>
+    </rest>
+    <route id="prueba">
+      <from uri="direct:prueba" />
+      <log message="prueba: ${body}"/>
+      <transform>
+        <constant>{ "result": "ok" }</constant>
+      </transform>
+    </route>
+  </camelContext>
+</beans>
