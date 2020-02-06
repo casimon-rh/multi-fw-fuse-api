@@ -4,6 +4,13 @@
   <artifactId>api-karaf</artifactId>
   <packaging>bundle</packaging>
   <version>0.0.1</version>
+  <name>:::: API Karaf  ::::</name>
+  <parent>
+    <groupId>com.redhat</groupId>
+    <artifactId>api-parent</artifactId>
+    <relativePath>..</relativePath>
+    <version>0.0.1</version>
+  </parent>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -41,6 +48,11 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-jackson</artifactId>
+      <version>${camel-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-netty-http</artifactId>
       <version>${camel-version}</version>
     </dependency>
 
@@ -120,36 +132,4 @@
     </plugins>
   </build>
   <profiles></profiles>
-  <repositories>
-    <repository>
-      <id>red-hat-ga-repository</id>
-      <url>https://maven.repository.redhat.com/ga</url>
-    </repository>
-    <repository>
-      <id>red-hat-early-access-repository</id>
-      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
-    </repository>
-    <repository>
-      <id>jboss-early-access-repository</id>
-      <url>https://repository.jboss.org/nexus/content/groups/ea</url>
-    </repository>
-    <repository>
-      <id>mvn</id>
-      <url>http://repo.maven.apache.org/maven2/</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>red-hat-ga-repository</id>
-      <url>https://maven.repository.redhat.com/ga</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>red-hat-early-access-repository</id>
-      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>jboss-early-access-repository</id>
-      <url>https://repository.jboss.org/nexus/content/groups/ea</url>
-    </pluginRepository>
-  </pluginRepositories>
 </project>

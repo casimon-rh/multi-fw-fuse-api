@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.redhat</groupId>
   <artifactId>api-spring</artifactId>
   <version>0.0.1</version>
-  <name>Fuse :: Boosters :: Rest HTTP</name>
+  <name>:::: API Spring ::::</name>
+  <parent>
+    <groupId>com.redhat</groupId>
+    <artifactId>api-parent</artifactId>
+    <relativePath>..</relativePath>
+    <version>0.0.1</version>
+  </parent>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <fuse.bom.version>7.4.0.fuse-740036-redhat-00002</fuse.bom.version>
     <cxf-version>3.2.7.fuse-740026-redhat-00001</cxf-version>
-		<camel-version>2.21.0.fuse-740039-redhat-00001</camel-version>
+    <camel-version>2.21.0.fuse-740039-redhat-00001</camel-version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -74,10 +80,10 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-swagger-java-starter</artifactId>
     </dependency>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-netty-http</artifactId>
-			<version>${camel-version}</version>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-netty-http</artifactId>
+      <version>${camel-version}</version>
     </dependency>
     <dependency>
       <groupId>io.fabric8</groupId>
@@ -132,42 +138,6 @@
       </plugin>
     </plugins>
   </build>
-  <repositories>
-    <repository>
-      <id>redhat-ga-repository</id>
-      <url>https://maven.repository.redhat.com/ga</url>
-      <releases />
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>redhat-ea-repository</id>
-      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
-      <releases />
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>redhat-ga-repository</id>
-      <url>https://maven.repository.redhat.com/ga</url>
-      <releases />
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>redhat-ea-repository</id>
-      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
-      <releases />
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
   <profiles>
     <profile>
       <id>openshift</id>
@@ -192,4 +162,3 @@
     </profile>
   </profiles>
 </project>
-
