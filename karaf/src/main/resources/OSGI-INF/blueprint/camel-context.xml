@@ -4,7 +4,6 @@
     http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
     http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/blueprint/cxf/camel-cxf.xsd
     http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
-
   <!-- Camel -->
   <camelContext id="myCamelContext" xmlns="http://camel.apache.org/schema/blueprint">
     <!-- <routeBuilder ref="inventoryRoute" /> -->
@@ -26,5 +25,4 @@
       </transform>
     </route>
   </camelContext>
-
 </blueprint>
