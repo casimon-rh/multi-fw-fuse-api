@@ -1,0 +1,46 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/blueprint/cxf" xsi:schemaLocation="
+    http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+    http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/blueprint/cxf/camel-cxf.xsd
+    http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+  <!-- CXF endpoint we expose -->
+  <!-- <cxf:cxfEndpoint id="inventoryEndpoint" address="http://localhost:9000/inventory" serviceClass="camelinaction.inventory.InventoryEndpoint" /> -->
+
+  <!-- the order bean contain all the business logic -->
+  <!-- <bean id="inventoryService" class="camelinaction.InventoryService" /> -->
+
+  <!-- the route builder -->
+  <!-- <bean id="inventoryRoute" class="camelinaction.InventoryRoute" /> -->
+  <reference id="httpService" interface="org.osgi.service.http.HttpService"/>
+  <bean id="camelServlet" class="org.apache.camel.component.servlet.CamelHttpTransportServlet"/>
+
+  <bean class="org.apache.camel.component.servlet.osgi.OsgiServletRegisterer"
+        init-method="register"
+        destroy-method="unregister">
+
+    <property name="alias" value="/rest"/>
+    <property name="httpService" ref="httpService"/>
+    <property name="servlet" ref="camelServlet"/>
+  </bean>
+
+
+  <!-- Camel -->
+  <camelContext id="myCamelContext" xmlns="http://camel.apache.org/schema/blueprint">
+    <!-- <routeBuilder ref="inventoryRoute" /> -->
+    <restConfiguration bindingMode="off" component="servlet" contextPath="/rest" port="8008" />
+
+    <rest path="/rest" consumes="application/json" produces="application/json">
+      <post>
+        <to uri="direct:prueba" />
+      </post>
+    </rest>
+    <route id="prueba">
+      <from uri="direct:prueba" />
+      <log message="prueba: ${body}"/>
+      <transform>
+        <constant>{ "result": "ok" }</constant>
+      </transform>
+    </route>
+  </camelContext>
+
+</blueprint>
