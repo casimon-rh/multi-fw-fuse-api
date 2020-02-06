@@ -25,35 +25,25 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
-      <version>${camel-version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-blueprint</artifactId>
-      <version>${camel-version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-cxf</artifactId>
-      <version>${camel-version}</version>
-    </dependency>
 
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-servlet</artifactId>
-      <version>${camel-version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-jackson</artifactId>
-      <version>${camel-version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-netty-http</artifactId>
-      <version>${camel-version}</version>
     </dependency>
 
     <dependency>
@@ -68,18 +58,11 @@
       <version>${slf4j-version}</version>
     </dependency>
 
-    <!-- needed to run CXF standalone with Jetty as HTTP server -->
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-transports-http-jetty</artifactId>
-      <version>${cxf-version}</version>
-    </dependency>
 
     <!-- testing -->
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-test</artifactId>
-      <version>${camel-version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

@@ -8,6 +8,31 @@
     <module>karaf</module>
     <module>spring</module>
   </modules>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <fuse-version>7.4.0.fuse-740036-redhat-00002</fuse-version>
+    <cxf-version>3.2.7.fuse-740026-redhat-00001</cxf-version>
+    <camel-version>2.21.0.fuse-740039-redhat-00001</camel-version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jboss.redhat-fuse</groupId>
+        <artifactId>fuse-springboot-bom</artifactId>
+        <version>${fuse-version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.redhat-fuse</groupId>
+        <artifactId>fuse-karaf-bom</artifactId>
+        <version>${fuse-version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <repositories>
     <repository>
       <id>red-hat-ga-repository</id>
